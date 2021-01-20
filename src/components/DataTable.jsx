@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const DataTable = ({ words }) => (
+const DataTable = memo(({ words }) => (
   <div className="table-responsive">
     <table className="table">
       <thead>
@@ -12,17 +12,19 @@ const DataTable = ({ words }) => (
         </tr>
       </thead>
       <tbody>
-        {words.map((word) => (
-          <tr>
-            <td>{word.original}</td>
-            <td>{word.text}</td>
-            <td>{word.palindrome ? '✅' : '❌'}</td>
-          </tr>
-        )).reverse()}
+        {words
+          .map((word) => (
+            <tr key={word.text}>
+              <td>{word.original}</td>
+              <td>{word.text}</td>
+              <td>{word.palindrome ? '✅' : '❌'}</td>
+            </tr>
+          ))
+          .reverse()}
       </tbody>
     </table>
   </div>
-);
+));
 
 DataTable.propTypes = {
   words: PropTypes.instanceOf(Array).isRequired,
