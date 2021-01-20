@@ -1,5 +1,12 @@
 import React from 'react';
+import Header from './components/Header';
+import Main from './containers/Main';
 
-const App = () => <h1>Hola Mundo</h1>;
+const App = () => (
+  <>
+    <Header />
+    <Main />
+  </>
+);
 
 export default App;

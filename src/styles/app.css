@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form {
+  width: 60%;
+  gap: 2rem;
+}
+
+th,
+td {
+  text-align: center;
+}
